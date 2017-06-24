@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.zhang.mydesign.MainActivity">
+<android.support.design.widget.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    android:id="@+id/my_app_bar"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/timg"
+        app:layout_scrollFlags="scroll|snap"
+        />
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:text="悬浮"-->
+
+        <!--/>-->
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/my_app_bar_tab"
+        ></android.support.design.widget.TabLayout>
+    <!--appbar区域使用 layout_scrollFlags 添加标记用来配合动作的layout_behavior-->
+    <!--想让view随着滚动做动作 在view添加滚动标记  没有添加标记的就会悬浮-->
+
+</android.support.design.widget.AppBarLayout>
+<!--滚动区域可以直接使用的控件有二个-->
+    <!--NestedScrollView-->
+    <!--RecyclerView-->
+    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    让文字和上面的bar链接 不发生覆盖
+    -->
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/my_nested_scrollview"
+        android:layout_width="match_parent"
+       app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:text="@string/scroll_text"
+            android:textSize="18dp" />
+
+    </android.support.v4.widget.NestedScrollView>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="10dp"
+        app:fabSize="mini"
+       android:elevation="10dp"
+        app:backgroundTint="@color/colorPrimary"
+        android:id="@+id/my_fab"
+        />
+</android.support.design.widget.CoordinatorLayout>

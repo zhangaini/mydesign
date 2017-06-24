@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zhang.mydesign.ThreeActivity">
+    <!--抽屉布局 就是侧滑布局 左边或者右边拉出来
+    可以直接拥有 二个或者三个childView
+    默认加入的childview就是主界面 使用layout_gravity的就是侧滑页面
+    -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_content"
+        android:background="#00ff00"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/timg"
+            />
+    </FrameLayout>
+    <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/left_content"-->
+        <!--android:background="#f0f000"-->
+        <!--android:layout_gravity="left"-->
+        <!--&gt;-->
+
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="返回"-->
+            <!--/>-->
+    <!--</FrameLayout>-->
+
+    <!--design 专门推出了一个侧滑布局 NavigationView
+            使用菜单作为布局
+              知乎 36氪
+              
+              使用的是二个布局的拼接 上面是一个xml 写的是头部的布局
+              下部分是一个菜单menu  item 的形式。
+    -->
+
+    <android.support.design.widget.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/left_content"
+        android:layout_gravity="left"
+        app:menu="@menu/menu_nav"
+        app:headerLayout="@layout/headerlayout"
+
+        >
+
+
+
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>
